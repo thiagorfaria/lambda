@@ -38,8 +38,7 @@ public class Lesson1 {
      * methods added to JDK 8 where appropriate. There is no need to use an
      * explicit loop in any of the code. Use method references rather than full
      * lambda expressions wherever possible.
-     */
-    /**
+     *
      * Exercise 1
      *
      * Create a string that consists of the first letter of each word in the list
