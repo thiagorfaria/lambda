@@ -5,7 +5,11 @@
  */
 package br.com.trf.lesson1;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * @author Speakjava (simon.ritter@oracle.com)
@@ -45,7 +49,9 @@ public class Lesson1 {
         List<String> list = Arrays.asList(
                 "alpha", "bravo", "charlie", "delta", "echo", "foxtrot");
 
-    /* YOUR CODE HERE */
+        StringBuilder result = new StringBuilder();
+        list.forEach(s -> result.append(s.charAt(0)));
+        System.out.println(result);
     }
 
     /**
@@ -57,7 +63,8 @@ public class Lesson1 {
         List<String> list = new ArrayList<>(Arrays.asList(
                 "alpha", "bravo", "charlie", "delta", "echo", "foxtrot"));
 
-    /* YOUR CODE HERE */
+        list.removeIf(s -> s.length() % 2 == 1);
+        list.forEach(System.out::println);
     }
 
     /**
@@ -69,7 +76,8 @@ public class Lesson1 {
         List<String> list = new ArrayList<>(Arrays.asList(
                 "alpha", "bravo", "charlie", "delta", "echo", "foxtrot"));
 
-    /* YOUR CODE HERE */
+        list.replaceAll(String::toUpperCase);
+        list.forEach(System.out::println);
     }
 
     /**
@@ -84,7 +92,9 @@ public class Lesson1 {
         map.put("b", 2);
         map.put("a", 1);
 
-    /* YOUR CODE HERE */
+        StringBuilder result = new StringBuilder();
+        map.forEach((s, i) -> result.append(s+i));
+        System.out.println(result);
     }
 
     /**
@@ -95,7 +105,8 @@ public class Lesson1 {
     private void exercise5() {
         List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-    /* YOUR CODE HERE */
+        Runnable task = () -> list.forEach(System.out::println);
+        new Thread(task).start();
     }
 
     /**
